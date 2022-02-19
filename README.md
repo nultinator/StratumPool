@@ -1,6 +1,6 @@
 # StratumPool, StratumSolo & Cenote : Arrow Solo-Mining Stratum Servers
 
-These are a very simple stratum servers for connecting GPU miners to a Ycash full node.
+These are a very simple stratum servers for connecting GPU miners to a Arrow full node.
 
 - StratumPool : Clients can specify their own transparent ycash address. ----NEEDS TWEAKED TO WORK WITH ARW
 - StratumSolo : All clients mine to the local node wallet. ---ALSO NEEDS TWEAKED
