@@ -1,27 +1,26 @@
-# StratumPool, StratumSolo & Cenote : Ycash Solo-Mining Stratum Servers
+# StratumPool, StratumSolo & Cenote : Arrow Solo-Mining Stratum Servers
 
 These are a very simple stratum servers for connecting GPU miners to a Ycash full node.
 
-- StratumPool : Clients can specify their own transparent ycash address.
-- StratumSolo : All clients mine to the local node wallet.
-- Cenote      : Solo pool with more options
+- StratumPool : Clients can specify their own transparent ycash address. ----NEEDS TWEAKED TO WORK WITH ARW
+- StratumSolo : All clients mine to the local node wallet. ---ALSO NEEDS TWEAKED
+- Cenote      : Solo pool with more options ---TESTED AND WORKING
 
 All operate as 'solo-pools', miners ONLY get paid if they find a block.
 
 Payments are made within the coinbase transaction, which means :-
 - Rewards must mature for 100 blocks before they can be spent.
-- The first transaction MUST be to a shielded address (s2y).
+- The first transaction MUST be to a shielded address (ar2as1).
 
 There's no dev fee but don't expect any support !! 
 
-If you'd like to buy beers :-
+Please buy beers for the original developer:-
 - YCASH : ys1c8cvazsz5gfp2zhdmzxcarfh4gp6jezdcxnywfcpyuau0l0f9uj99tzvrr6sjw5rfhpsw06lc6n
-- ZCASH : zs18zekcwmw9murkl0qazjz5hz4uenaf9pyw53as6f4plx39m92elfyhljgxwc25t3s5uerzqtmf0w
 
 ## Requirements :-
 
-- Ycash Full Node (Ubuntu/Debian Linux)
-- YECwallet Full Node
+- Arrow Full Node (Ubuntu/Debian Linux)
+- Quiver Full Node
 - GPU Hardware (ie: Nvidia, AMD)
 - GPU Mining Software for Equihash 192,7 (ie: miniZ v1.6w)
 
@@ -29,9 +28,9 @@ It doesn't work on Windows or iThings, but I dont care as I dont have any :-)
 
 ## Tested Miners :-
 
-- GMiner (v2.28)
-- lolMiner (v0.8.4)
-- miniZ (v1.6w)
+- GMiner (v2.64) --TESTED AND WORKING WITH ARROW
+- lolMiner (v0.8.4) --TESTED FOR YCASH, NOT ARROW
+- miniZ (v1.6w) --TESTED FOR YCASH, NOT ARROW
 
 ## Usage :-
 
@@ -64,15 +63,18 @@ cenote
 
 ## Important !!! Don't forget !!!
 
-You MUST add a line to your node configuration file (ycash.conf) to set a fixed mining address, ie :-
+You MUST add a line to your node configuration file (arrow.conf) to set a fixed mining address, ie :-
 
-mineraddress=s1youraddressgoeshere
+mineraddress=aryouraddressgoeshere
 
-* This MUST be a transparent address (starts with 's1')
-* The address MUST belong to the node wallet (use 'ycash-cli getnewaddress')
+* This MUST be a transparent address (starts with 'ar')
+* The address MUST belong to the node wallet (use 'arrow-cli getnewaddress')
+* Make sure to back up the private key to this address as well (use 'arrow-cli dumprivkey "armypersonalminingaddress" ')
 
 Before you can spend any coins you have mined, you must :-
 
 * Wait 100 blocks for the reward to mature.
-* Send the ENTIRE balance of the saddr to a yaddr you control. (Use YECwallet FullNode)
+* Send the ENTIRE balance of the "ar" addr to an "as1" addr you control. (Use Quiver FullNode)
+* When shielding, Quiver will not suppport sending from a transparent address.
+* You must use arrow-cli z_shieldcoinbase "armytransparentaddress" "as1myshieldedaddress" (obviously use real addresses and not these fake ones though)
 
