@@ -291,7 +291,7 @@ sub decode_request {
 
 sub node_rpc {
 	
-	my $resp = `ycash-cli $_[0] 2>&1`;						# call rpc client, which MUST be in the path
+	my $resp = `arrow-cli $_[0] 2>&1`;						# call rpc client, which MUST be in the path
 
 	my $eval = eval { decode_json($resp) };						# test for valid json response from server
 	if ($@) {									# it was garbage	
