@@ -58,7 +58,7 @@ cenote
 * reload
 * exit
 
-* sudo cpan install POSIX IO::Handle IO::Socket IO::Select JSON	Digest::SHA
+* sudo cpan install POSIX IO::Handle IO::Socket IO::Select JSON	Digest::SHA Text::CSV
 
 
 ## Important !!! Don't forget !!!
