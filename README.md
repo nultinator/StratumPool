@@ -2,9 +2,9 @@
 
 These are a very simple stratum servers for connecting GPU miners to a Arrow full node.
 
-- StratumPool : Clients can specify their own transparent ycash address. ----NEEDS TWEAKED TO WORK WITH ARW
-- StratumSolo : All clients mine to the local node wallet. ---ALSO NEEDS TWEAKED
-- Cenote      : Solo pool with more options ---TESTED AND WORKING
+- StratumPool : Clients can specify their own transparent arrow address.
+- StratumSolo : All clients mine to the local node wallet.
+- Cenote      : Solo pool with more options
 
 All operate as 'solo-pools', miners ONLY get paid if they find a block.
 
